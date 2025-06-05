@@ -1,0 +1,367 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Caveat', cursive;
+    background: linear-gradient(135deg, #bfefff, #fffacd);
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(120deg, #b2ebf2, #fff9c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+  }
+  
+  .question-box {
+    text-align: center;
+    background: #ffffffdd;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    animation: fadeIn 1.5s ease-in;
+    max-width: 90vw;
+  }
+  
+  .question-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .buttons button {
+    padding: 10px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    background-color: #ffd54f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .buttons button:hover {
+    transform: scale(1.1);
+    background-color: #ffca28;
+  }
+  
+  #sarcastic-response {
+    margin-top: 15px;
+    font-style: italic;
+    color: #616161;
+    min-height: 1.5em;
+  }
+  
+  .main-page {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .birthday-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    animation: popIn 1s ease-in-out;
+    color: #01579b;
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    width: 180px;
+    height: 240px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .card .card-front,
+  .card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    user-select: none;
+    transition: transform 0.8s;
+  }
+  
+  .card .card-front {
+    background-color: #fff9c4;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .card .card-back {
+    background-color: #b3e5fc;
+    color: #01579b;
+    transform: rotateY(180deg);
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .card.revealed .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card.revealed .card-back {
+    transform: rotateY(360deg);
+  }
+  
+  .next-page-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background: #64b5f6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 6px 12px rgba(100, 181, 246, 0.5);
+  }
+  
+  .next-page-btn:hover {
+    background: #42a5f5;
+    box-shadow: 0 8px 16px rgba(66, 165, 245, 0.7);
+  }
+  
+  #confetti-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .flame {
+    width: 10px;
+    height: 20px;
+    background: radial-gradient(circle at center, #ffeb3b 40%, transparent 70%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    animation: flicker 1s infinite alternate ease-in-out;
+  }
+  
+  @keyframes flicker {
+    0% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      filter: drop-shadow(0 0 4px #ffeb3b);
+    }
+    50% {
+      transform: scale(1.1) translateY(-3px);
+      opacity: 0.8;
+      filter: drop-shadow(0 0 6px #fff176);
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      filter: drop-shadow(0 0 4px #ffeb3b);
+    }
+  }
+  
+  .candles-off .flame {
+    animation-play-state: paused !important;
+    opacity: 0 !important;
+  }
+  
+  #blow-btn {
+    background: #3bb7b7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(244,67,54,0.6);
+    transition: background 0.3s ease;
+  }
+  
+  #blow-btn:hover {
+    background: #d32f2f;
+  }
+  
+  #send-wish-btn {
+    margin-top: 15px;
+    background: #64b5f6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(100,181,246,0.6);
+    transition: background 0.3s ease;
+  }
+  
+  #send-wish-btn:hover {
+    background: #42a5f5;
+  }
+  
+  #wish-input {
+    width: 100%;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #01579b;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes smokeRise {
+    0% {
+      opacity: 0.8;
+      transform: translateY(0) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100px) scale(1.2);
+    }
+  }
+  
+  .smoke {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #aaa, transparent 60%);
+    border-radius: 50%;
+    animation: smokeRise 2s ease-out forwards;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* Add this at the end for animated cake base */
+.animated-cake-base {
+  width: 180px;
+  height: 100px;
+  margin: 0 auto;
+  background: linear-gradient(to top, #f9a825, #ffeb3b);
+  border-radius: 20px 20px 10px 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  position: relative;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animated-cake {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('assets/fonts/Caveat.ttf') format('truetype');
+  }
+
+/* Themed rounded animated cake base */
+.animated-cake-base {
+    width: 220px;
+    height: 100px;
+    margin: 30px auto 0 auto;
+    background: linear-gradient(to bottom, #c332ab, #fbc02d);
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+    animation: bounce 2s infinite ease-in-out;
+    z-index: 1;
+    border: 2px solid #c332ab;
+  }
+  
+  .candle {
+    width: 10px;
+    height: 40px;
+    background: #42a5f5;
+    border-radius: 5px;
+    position: absolute;
+    top: -50px;
+    z-index: 3;
+  }
+  
+  #cake-container .candle:nth-child(2) { left: 105px; }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animated-cake {
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #cake-container {
+    margin-top: 50px;
+    padding-top: 70px;
+    position: relative;
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .flame {
+    width: 10px;
+    height: 20px;
+    background: radial-gradient(circle at center, #ffeb3b 40%, transparent 70%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    animation: flicker 1s infinite alternate ease-in-out;
+  }
+  
+  .candles-off .flame {
+    animation-play-state: paused !important;
+    opacity: 0 !important;
+  }
+  

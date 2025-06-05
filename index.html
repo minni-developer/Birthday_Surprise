@@ -1,0 +1,64 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday Surprise 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="birthday-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" autoplay loop></audio>
+
+  <div class="overlay" id="overlay">
+    <div class="question-box">
+      <h1>Did you think I forgot?</h1>
+      <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+      </div>
+      <p id="sarcastic-response"></p>
+    </div>
+  </div>
+
+  <div class="main-page hidden" id="main-page">
+    <h1 class="birthday-title">🎂 Happy Birthday! 🎂</h1>
+
+    <div class="cards-container animated-cake">
+      <div class="card"><div class="card-front">Click me!</div><div class="card-back">Wishing you endless joy and laughter!</div></div>
+      <div class="card"><div class="card-front">Click me!</div><div class="card-back">May your dreams always shine bright!</div></div>
+      <div class="card"><div class="card-front">Click me!</div><div class="card-back">Here’s to another year of amazing adventures!</div></div>
+      <div class="card"><div class="card-front">Click me!</div><div class="card-back">Keep being the wonderful person you are!</div></div>
+    </div>
+
+    <div style="max-width: 400px; margin: 40px auto; text-align: center; font-family: 'Caveat', cursive; color: #01579b;">
+      <h2>Make a Wish!</h2>
+
+      <!-- Cake Container (Candles) -->
+      <div id="cake-container" style="position: relative; margin-bottom: 30px;">
+
+        <div class="candle" style="position: absolute; top: 10%; left: 50%; width: 10px; height: 40px; background:#42a5f5; border-radius: 4px;"><div class="flame"></div></div>
+
+        <div class="animated-cake-base"></div>
+      </div>
+
+      <button id="blow-btn">Blow Out Candles & Make a Wish</button>
+
+      <div style="margin-top: 25px;">
+        <textarea id="wish-input" placeholder="Type your wish here..." rows="3"></textarea>
+      </div>
+
+      <button id="send-wish-btn">Send Wish</button>
+
+      <p id="wish-display" style="margin-top: 20px; font-style: italic; display: none;"></p>
+    </div>
+
+    <button id="nextPageBtn" class="next-page-btn">Read Your Special Letter 📜</button>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

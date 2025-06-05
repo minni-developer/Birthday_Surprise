@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Special Letter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #fffacd, #bfefff);
+      color: #01579b;
+      font-family: 'Caveat', cursive;
+      padding: 40px 20px;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+    .letter-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #ffffffdd;
+      padding: 30px 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      font-size: 1.5rem;
+      line-height: 1.6;
+      white-space: pre-line;
+      animation: fadeIn 2s ease-out;
+    }
+    .back-btn {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #64b5f6;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 6px 12px rgba(100, 181, 246, 0.5);
+      transition: background 0.3s ease;
+    }
+    .back-btn:hover {
+      background: #42a5f5;
+      box-shadow: 0 8px 16px rgba(66, 165, 245, 0.7);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <audio src="assets/audio/Enchanted.m4a" autoplay loop></audio>
+
+  <div class="letter-container">
+    <h1>To My Special Friend,</h1>
+    <p>
+      I hope this message finds you with a smile as bright as the candles on your cake. 
+      Today is your day — a celebration of all the amazing moments we've shared and 
+      the incredible memories yet to come.
+    </p>
+    <p>
+      You've been a shining light in my life, a source of laughter, support, and endless inspiration. 
+      This birthday, I wish you happiness that knows no bounds, dreams that soar higher than ever, 
+      and a heart filled with love.
+    </p>
+    <p>
+      Never forget how truly special you are — not just today but every day. Cheers to you and 
+      all the beautiful moments waiting for you ahead!
+    </p>
+    <p style="margin-top: 40px; font-weight: bold;">
+      With all my love and best wishes,<br />
+      Your Friend 💙
+    </p>
+    <a href="index.html" class="back-btn">Back to Surprise</a>
+  </div>
+</body>
+</html>
