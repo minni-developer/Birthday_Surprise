@@ -7,14 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      background: linear-gradient(135deg, #fffacd, #bfefff);
-      color: #01579b;
-      font-family: 'Caveat', cursive;
-      padding: 40px 20px;
-      overflow-y: scroll;
-      height: 100vh;
-    }
+  body {
+    background: linear-gradient(135deg, #fffacd, #bfefff);
+    color: #01579b;
+    font-family: 'Caveat', cursive;
+    padding: 40px 20px;
+    padding-bottom: 100px; 
+    overflow-y: scroll;
+    height: 100vh;
+  }
     .letter-container {
       max-width: 700px;
       margin: 0 auto;
@@ -26,6 +27,7 @@
       line-height: 1.6;
       white-space: pre-line;
       animation: fadeIn 2s ease-out;
+      padding-bottom: 100px;
     }
     .back-btn {
       margin-top: 30px;
@@ -45,6 +47,30 @@
       box-shadow: 0 8px 16px rgba(66, 165, 245, 0.7);
     }
 
+      .gif-heart-container {
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .heart-gif {
+    width: 150px;
+    height: auto;
+    animation: float 2s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .heart-message {
+    font-size: 1.4rem;
+    color: #ff4081;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -55,10 +81,10 @@
   <audio src="assets/audio/Enchanted.m4a" autoplay loop></audio>
 
   <div class="letter-container">
-    <h1>To My Special Friend,</h1>
+    <h1>To My Special,</h1>
     <p>
       I hope this message finds you with a smile as bright as the candles on your cake. 
-      Today is your day — a celebration of all the amazing moments we've shared and 
+      Today is your day, a celebration of all the amazing moments we've shared and 
       the incredible memories yet to come.
     </p>
     <p>
@@ -74,6 +100,12 @@
       With all my love and best wishes,<br />
       Your Friend 💙
     </p>
+
+    <div class="gif-heart-container">
+      <img src="assets/heart.gif" alt="Animated Heart" class="heart-gif" />
+      <p class="heart-message">Wishing you endless love and happiness ❤️</p>
+    </div>
+    
     <a href="index.html" class="back-btn">Back to Surprise</a>
   </div>
 </body>
