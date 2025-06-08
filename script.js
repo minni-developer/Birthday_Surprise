@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainPage = document.getElementById('main-page');
   
     document.getElementById('yesBtn').addEventListener('click', () => {
-      document.getElementById('sarcastic-response').textContent = "Oh ye of little faith! 🤷";
+      document.getElementById('sarcastic-response').textContent = "Oh ye of little faith!  IDIOT🤷";
       setTimeout(() => {
         overlay.classList.add('hidden');
         mainPage.classList.remove('hidden');
-      }, 1500);
+      }, 2500);
     });
   
     document.getElementById('noBtn').addEventListener('click', () => {
@@ -82,7 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         overlay.classList.add('hidden');
         mainPage.classList.remove('hidden');
-      }, 1500);
+      }, 2500);
+    });
+  });
+  
+  document.getElementById("start-button").addEventListener("click", function () {
+    const music = document.getElementById("birthday-music");
+    music.play().catch((e) => {
+      console.log("Autoplay blocked, playing after interaction:", e);
     });
   });
   
